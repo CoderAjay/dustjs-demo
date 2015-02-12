@@ -1,0 +1,15 @@
+<div class="row">
+    <h3>  Inspired by Your Browsing History</h3>
+    <ul>
+        {#products}
+        <li class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
+          <a href="/products/{id}" class="product" data-productId="{id}">
+            <img src="{image.sizes.Small.url}" class="img-responsive" alt="Image">
+            <div> {name}</div>
+            <div>{priceLabel} </div>
+            {:else}
+            <p>no products to show</p>
+            {/products}
+            </a>
+    </ul>
+</div>

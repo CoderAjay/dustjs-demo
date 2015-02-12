@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+var debug = require('debug')('dustjs');
+var app = require('../app');
+
+
+app.set('port', process.env.PORT || 9000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});
+ /**
+      * [livereload description]
+      * @type {[type]}
+      */
+var path = require('path');
+var rootPath = path.normalize(__dirname + '/..');
+require('livereload').createServer().watch(rootPath + "/dust");
+console.log('livereload is running.')
